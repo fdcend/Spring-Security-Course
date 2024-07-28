@@ -34,12 +34,12 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .authorizeHttpRequests(http -> {
-                    //endpoints
-                    http.requestMatchers(HttpMethod.GET, "/helloNoSec").permitAll();
-                    http.requestMatchers(HttpMethod.GET, "/helloSec").hasAuthority("READ");
-                    http.anyRequest().denyAll();
-                })
+//                .authorizeHttpRequests(http -> {
+//                    //endpoints
+//                    http.requestMatchers(HttpMethod.GET, "/helloNoSec").permitAll();
+//                    http.requestMatchers(HttpMethod.GET, "/helloSec").hasAuthority("READ");
+//                    http.anyRequest().denyAll();
+//                })
                 .build();
     }
 
